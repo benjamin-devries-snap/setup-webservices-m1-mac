@@ -15,6 +15,6 @@ To use webservices, see:
 
 ## IMPORTANT NOTES
 
-DON'T auto format the script or the indentation will mess things up
-
-If are still running into issues, replace everywhere in this file that says "openjdk:17" with "openjdk:17-jdk-bullseye"
+- DON'T auto format the script or the indentation will mess things up
+- If are still running into issues, replace everywhere in this file that says "openjdk:17" with "openjdk:17-jdk-bullseye"
+- this script will only update the main "docker-compose.yml" file. Others must be manually updated.
