@@ -26,10 +26,10 @@ if ! grep -q 'platform: linux/x86_64' 'docker-compose.yml'; then
 fi
 
 # Update docker-compose.yml security16 image
-if grep -q '489561981168.dkr.ecr.us-east-1.amazonaws.com/security_16_test:2.7' 'docker-compose.yml'; then
+if grep -q '489561981168.dkr.ecr.us-east-1.amazonaws.com/security_16_test' 'docker-compose.yml'; then
     echo Updating docker-compose.yml for correct security 16 image...
 fi
-sed -i '' 's/489561981168.dkr.ecr.us-east-1.amazonaws.com\/security_16_test:2.7/489561981168.dkr.ecr.us-east-1.amazonaws.com\/security_16_arm:1.2/g' 'docker-compose.yml'
+sed -i '' -E "s/489561981168\.dkr\.ecr\.us-east-1\.amazonaws\.com\/security_16_test:[[:digit:]]+\.[[:digit:]]+\"/489561981168.dkr.ecr.us-east-1.amazonaws.com\/security_16_arm:latest\"/g" 'docker-compose.yml'
 
 # Add flyway.env file if missing
 if ! test -f "flyway.env"; then
